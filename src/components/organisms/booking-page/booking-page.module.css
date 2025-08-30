@@ -1,0 +1,28 @@
+.formOuter{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(204, 204, 204, .5);
+    border-radius: 16px;
+    padding: 42px;
+    margin: 20px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(204, 204, 204,.3);
+}
+form > button[type="submit"] {
+    width: 100%;
+}
+@media only screen and (min-width: 767px){
+    .formOuter{
+        height: calc(100svh - 80px);
+    }
+    form{
+        margin: 0 20px;
+    }
+}

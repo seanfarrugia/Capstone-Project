@@ -5,12 +5,14 @@ function Button({
     variant = 'primary', 
     innerLink = true, 
     to = '',
-    text = ''
+    text = '',
+    type='',
+    ariaLabel=""
 }) {
     return (
         innerLink 
-            ? <Link to={to} className={`${styles.button} ${styles?.[variant]}`}>{text}</Link> 
-            : <button className={`${styles?.[variant]} ${styles.button}`}>{text}</button>
+            ? <Link to={to} aria-label={ariaLabel} className={`${styles.button} ${styles?.[variant]}`}>{text}</Link> 
+            : <button type={type} aria-label={ariaLabel} className={`${styles?.[variant]} ${styles.button}`}>{text}</button>
     );
 }
 

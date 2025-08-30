@@ -2,7 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import HomePage from "./components/organisms/home-page";
-import ReservationForm from "./components/organisms/reservation-form";
+import BookingPage from "./components/organisms/booking-page";
+import BookingConfirmed from "./components/organisms/booking-confirmed";
 
 
 function Main() {
@@ -21,7 +22,8 @@ function Main() {
       <main className="App-main">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/reservation" element={<ReservationForm />} />
+          <Route path="/reservation" element={<BookingPage />} />
+          <Route path="/confirmation" element={<BookingConfirmed />} />
         </Routes>
       </main>
       <Footer />

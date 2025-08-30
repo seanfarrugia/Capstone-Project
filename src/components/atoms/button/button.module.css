@@ -7,7 +7,9 @@
     display: inline-block;
     font-weight: bold;
     border-radius: 16px;
+    border: none;
     transition: 0.3s all ease-in-out;
+    cursor: pointer;
 }
 .button:hover{
     background-color: #edefee;

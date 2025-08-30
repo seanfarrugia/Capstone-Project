@@ -7,7 +7,7 @@ function Specials({specials}) {
         <section className={styles.specials}>
             <div className={styles.titleSection}>
                 <h2>Specials</h2>
-                <Button to='/' innerLink text='Order Online' variant='secondary' />
+                <Button ariaLabel='Order Online' to='/' innerLink text='Order Online' variant='secondary' />
             </div>  
             <div className={styles.carousel}>
                 {specials.map((value, index) => {

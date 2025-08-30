@@ -10,7 +10,7 @@ function SpecialCard({special}) {
                 <span>${special.price.toFixed(2)}</span>  
             </div>
             <p>{special.content}</p>
-            <Button innerLink to='/' text='Order for Delivery' variant='tertiary' />
+            <Button ariaLabel='Order for Delivery' innerLink to='/' text='Order for Delivery' variant='tertiary' />
         </article>
     );
 }

@@ -160,6 +160,7 @@ footer ul li a:hover{
 
 main {
   background-color: #edefee;
+  min-height: calc(100svh - 80px);
 }
 
 .reservationForm{

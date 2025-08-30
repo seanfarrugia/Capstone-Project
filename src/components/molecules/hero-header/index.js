@@ -10,9 +10,9 @@ function HeroHeader({title, subtitle, content}) {
                     <h1>{title}</h1>
                     <h2>{subtitle}</h2>
                     <p>{content}</p>
-                    <Button to='/reservation' text='Reserve a Table' innerLink />
+                    <Button ariaLabel='Book a Table' to='/reservation' text='Reserve a Table' innerLink />
                 </div>
-                <img src={RestaurantImage} alt={`${title} Restarant Image`} className={styles.headerImage} />
+                <img src={RestaurantImage} alt={`${title} Restarant`} className={styles.headerImage} />
             </div>
         </section>
     );

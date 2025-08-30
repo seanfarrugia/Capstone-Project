@@ -1,0 +1,47 @@
+.chicagoHeader{
+    background-color: #edefee;
+    max-height: auto;
+    overflow: hidden;
+    padding: 64px 20px;
+}
+.chicagoHeader > div{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    align-items: center;
+}
+.chicagoHeader h2{
+    font-size: 64px;
+    margin: 0;
+    color: #333;
+}
+.chicagoHeader h3{
+    font-size: 36px;
+    margin: 0;
+    color: #333;
+}
+.chicagoHeader p{
+    font-size: 20px;
+    margin-top: 26px;
+    line-height: 32px;
+    color: #333;
+    margin-bottom: 38px;
+}
+.headerImage{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+@media only screen and (min-width: 767px){
+    .chicagoHeader{
+        max-height: 500px;
+    }
+    .chicagoHeader > div{
+        grid-template-columns: 1fr 1fr;
+    }
+}

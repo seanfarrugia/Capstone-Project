@@ -1,0 +1,42 @@
+.testimonials{
+    padding: 36px 20px;
+    background-color: #333333;
+}
+.carousel{
+    display: flex;
+    gap: 14px;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: auto;
+    padding-bottom: 46px;
+    padding-top: 46px;
+   
+}
+.carousel * {
+    scrollbar-width: thin;
+    scrollbar-color: #f4ce14 rgba(255,255,255,.2);
+    cursor: pointer;
+}
+.carousel::-webkit-scrollbar {
+    height:6px;
+    
+}
+
+.carousel::-webkit-scrollbar-track {
+    background: rgba(255,255,255,.2);
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 65px;
+    border: 0px none rgba(255,255,255,.2);
+}
+
+.testimonials > h2{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 0;
+    color: #ffffff;
+    margin-bottom: 0px;
+}

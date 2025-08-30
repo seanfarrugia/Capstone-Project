@@ -1,0 +1,35 @@
+.button{
+    background-color: #f4ce14;
+    padding: 18px 40px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #495e49;
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 16px;
+    transition: 0.3s all ease-in-out;
+}
+.button:hover{
+    background-color: #edefee;
+    transform: translateY(-2px);
+}
+
+.secondary{
+    background-color: #495e49;
+    color: #fff;
+}
+.secondary:hover{
+    background-color: #f4ce14;
+    color: #495e49;
+    transform: translateY(-2px);
+}
+
+.tertiary{
+    background-color: #edefee;
+    color: #495e49;
+}
+.tertiary:hover{
+    background-color: #f4ce14;
+    color: #495e49;
+    transform: translateY(-2px);
+}

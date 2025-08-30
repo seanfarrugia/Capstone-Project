@@ -13,14 +13,18 @@ h1, h2, h3, h4{
 header {
   width: 100%;
   background-color: white;
-  box-shadow: 0 0 20px #cccc;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  box-shadow: 0 0 20px rgba(204, 204, 204, 0.3);
+  min-height: 90px;
+  display: flex;
+  align-items: center;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
+.logo-outer{
+  margin-right: 80px;
+}
 header > nav {
   display: flex;
   align-items: center;
@@ -29,27 +33,74 @@ header > nav {
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
+  width: 100%;
 }
 
 header > nav > img{
   max-width: 180px;
-  margin-right: 80px;
 }
 
 header > nav > ul{
   margin-right: auto;
   display: flex;
-  gap: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: #edefee;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100svh - 70px);
+  gap: 42px;
   padding: 0;
+  transition: .2s all ease-in-out;
+}
+header > nav > ul.active{
+  opacity: 100%;
+  transform: translateY(0px);
+  visibility: visible;
+}
+
+.menu-btn{
+  background-color: transparent;
+  border: none;
+  margin-left: auto;
+  cursor: pointer;
 }
 
 header > nav > ul a{
   font-family: "Karla", sans-serif;
-  font-size: 18px;
+  font-size: 32px;
   color: #333333;
   text-decoration: none;
   font-weight: bold;
   transition: .3s all ease-in-out;
+}
+
+@media only screen and (min-width: 767px){
+  header > nav > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    position: relative;
+    height: auto;
+    background-color: transparent;
+    top: 0;
+    gap: 24px;
+    opacity: 100%;
+    transform: translateY(0px);
+    visibility: visible;
+  }
+  header > nav > ul a{
+    font-size: 18px;
+  }
+  .menu-btn{
+    display: none;
+  }
 }
 
 header > nav > ul a:hover{
@@ -71,10 +122,12 @@ footer img{
 footer > div {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px;
   color: white;
+  gap: 24px;
 }
 footer h3{
   font-size: 24px;
@@ -89,6 +142,7 @@ footer ul li {
   color: white;
   font-size: 18px;
   margin-bottom: 12px;
+  padding: 0;
 }
 
 footer ul li a {
@@ -105,11 +159,7 @@ footer ul li a:hover{
 }
 
 main {
-  height: calc(100dvh - 90px);
   background-color: #edefee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .reservationForm{

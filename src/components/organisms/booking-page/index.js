@@ -21,21 +21,23 @@ export const updateTimes = (state, action) => {
 
 function BookingPage() {
     const navigate = useNavigate();
-    
-    const [formData, setFormData] = useState({
-        ocassion: "",
-        number_of_diners: "",
-        reservation_date: "",
-        reservation_time: ""
-    });
 
     const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
 
+    const [formData, setFormData] = useState({
+        ocassion: "dinner",
+        number_of_diners: "",
+        reservation_date: "",
+        reservation_time: availableTimes ? availableTimes[0] : ""
+    });
+    
     const handleChange = (id, value) => {
-        setFormData((prev) => ({
+        setFormData(prev => ({
             ...prev,
-            [id]: value
+            [id]: value,
+            reservation_time: id === "reservation_date" && availableTimes ? availableTimes[0] : prev.reservation_time
         }));
+
         if (id === "reservation_date") {
             dispatch({ type: "dateChange", date: value });
         }
@@ -43,15 +45,28 @@ function BookingPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        submitAPI(formData);
-        navigate("/confirmation");
+        const response = submitAPI(formData);
+        response && navigate("/confirmation");
     }
 
     return (
         <div className={styles.formOuter}>
             <form className={styles.reservationForm} onSubmit={(e) => handleSubmit(e)}>
                 <BookingForm formData={formData} onChange={handleChange} availableTimes={availableTimes} />
-                <Button ariaLabel="Book a Table" type="submit" text="Book a Table" innerLink={false} variant="secondary" />
+                <Button 
+                    ariaLabel="Book a Table" 
+                    type="submit" 
+                    text="Book a Table" 
+                    innerLink={false} 
+                    variant="secondary" 
+                    disabled={  formData.ocassion === '' ||
+                                formData.number_of_diners === '' ||
+                                formData.reservation_date === '' ||
+                                formData.reservation_time === ''
+                                ? true
+                                : false
+                            }
+                />
             </form>
         </div>
     );

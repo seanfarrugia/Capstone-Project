@@ -18,6 +18,10 @@ form{
 form > button[type="submit"] {
     width: 100%;
 }
+form > button[type="submit"]:disabled {
+    cursor: default;
+    opacity: .5;
+}
 @media only screen and (min-width: 767px){
     .formOuter{
         height: calc(100svh - 80px);

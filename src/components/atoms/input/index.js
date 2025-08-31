@@ -11,7 +11,8 @@ function Input({
     max = 150, 
     options = [],
     value, 
-    onChange
+    onChange,
+    required = false
 }) {
     switch(type) {
         case 'textarea':
@@ -26,6 +27,7 @@ function Input({
                             className="formInput" 
                             onChange={(e) => onChange(e.target.value)}
                             value={value}
+                            required={required}
                             min={min} 
                             max={max} />
                     </div>
@@ -36,6 +38,7 @@ function Input({
                         className="formInput" 
                         onChange={(e) => onChange(e.target.value)}
                         value={value}
+                        required={required}
                         min={min} 
                         max={max} />
             )
@@ -44,22 +47,22 @@ function Input({
                 label ? (
                     <div className={styles.formGroup}>
                         <label htmlFor={id}>{label}</label>
-                        <input id={id} placeholder={placeholder} type={type} min={min} max={max} className="formInput" onChange={(e) => onChange(e.target.value)} value={value} />
+                        <input id={id} placeholder={placeholder} type={type} min={min} max={max} className="formInput" onChange={(e) => onChange(e.target.value)} value={value} required={required} />
                     </div>
-                ) : <input id={id} placeholder={placeholder} type={type} min={min} max={max} className="formInput" onChange={(e) => onChange(e.target.value)} value={value} />
+                ) : <input id={id} placeholder={placeholder} type={type} min={min} max={max} className="formInput" onChange={(e) => onChange(e.target.value)} value={value} required={required} />
             )
         case 'select':
             return (
                 label ? (
                     <div className={styles.formGroup}>
                         <label htmlFor={id}>{label}</label>
-                        <select id={id} className="formDropdown" onChange={(e) => onChange(e.target.value)}>
+                        <select id={id} className="formDropdown" onChange={(e) => onChange(e.target.value)} required={required}>
                             {options.map((option, index) => {
                                 return <option key={index} value={option.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9-_]/g, '')}>{option}</option>
                             })}
                         </select>
                     </div>
-                ) : <select id={id} className="formDropdown" onChange={(e) => onChange(e.target.value)}>
+                ) : <select id={id} className="formDropdown" onChange={(e) => onChange(e.target.value)} required={required}>
                         {options.map((option, index) => {
                             return <option key={index} value={option.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9-_]/g, '')}>{option}</option>
                         })}
@@ -70,18 +73,18 @@ function Input({
                 label ? (
                     <div className={styles.formGroup}>
                         <label htmlFor={id}>{label}</label>
-                        <input id={id} placeholder={placeholder} type={type} step="60" className="formInput" onChange={(e) => onChange(e.target.value)} value={value} />
+                        <input id={id} placeholder={placeholder} type={type} step="60" className="formInput" onChange={(e) => onChange(e.target.value)} value={value} required={required} />
                     </div>
-                ) : <input id={id} placeholder={placeholder} type={type} step="60" className="formInput" onChange={(e) => onChange(e.target.value)} value={value} />
+                ) : <input id={id} placeholder={placeholder} type={type} step="60" className="formInput" onChange={(e) => onChange(e.target.value)} value={value} required={required} />
             )
         default:
             return (
                 label ? (
                     <div className={styles.formGroup}>
                         <label htmlFor={id}>{label}</label>
-                        <input id={id} placeholder={placeholder} type={type} className="formInput" onChange={(e) => onChange(e.target.value)} value={value} />
+                        <input id={id} placeholder={placeholder} min={min} max={max} type={type} className="formInput" onChange={(e) => onChange(e.target.value)} value={value} required={required} />
                     </div>
-                ) : <input id={id} placeholder={placeholder} type={type} className="formInput" onChange={(e) => onChange(e.target.value)} value={value} />
+                ) : <input id={id} placeholder={placeholder} type={type} className="formInput" onChange={(e) => onChange(e.target.value)} value={value} required={required} />
             )
     }
 }

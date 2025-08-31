@@ -6,13 +6,14 @@ function Button({
     innerLink = true, 
     to = '',
     text = '',
-    type='',
-    ariaLabel=""
+    type = '',
+    ariaLabel = "",
+    disabled = false
 }) {
     return (
         innerLink 
             ? <Link to={to} aria-label={ariaLabel} className={`${styles.button} ${styles?.[variant]}`}>{text}</Link> 
-            : <button type={type} aria-label={ariaLabel} className={`${styles?.[variant]} ${styles.button}`}>{text}</button>
+            : <button disabled={disabled} type={type} aria-label={ariaLabel} className={`${styles?.[variant]} ${styles.button}`}>{text}</button>
     );
 }
 

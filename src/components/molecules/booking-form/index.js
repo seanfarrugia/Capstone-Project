@@ -9,38 +9,45 @@ function BookingForm({ formData, onChange, availableTimes  }) {
                 <Input 
                     type={'select'}
                     id={'ocassion'}
-                    label={'Ocassion'}
+                    label={'Ocassion *'}
                     options={[
+                        'Dinner',
                         'Birthday',
                         'Wedding',
                         'Anniversary',
                     ]} 
                     value={formData?.ocassion}
                     onChange={(val) => onChange("ocassion", val)}
+                    required={true}
                 />
                 <Input 
                     type={'number'}
                     id={'number_of_diners'}
-                    label={'Number of Diners'}
+                    label={'Number of Diners *'}
                     placeholder={'Number of Diners'}
                     value={formData?.number_of_diners}
+                    min={1}
+                    max={12}
                     onChange={(val) => onChange("number_of_diners", val)}
+                    required={true}
                 />
                 <Input 
                     type={'date'}
                     id={'reservation_date'}
-                    label={'Reservation Date'}
+                    label={'Reservation Date *'}
                     placeholder={'Reservation Date'}
                     value={formData?.reservation_date}
                     onChange={(val) => onChange("reservation_date", val)}
+                    required={true}
                 />
                 <Input 
                     type={'select'}
                     id={'reservation_time'}
-                    label={'Reservation Time'}
+                    label={'Reservation Time *'}
                     options={availableTimes && [...availableTimes]} 
                     value={formData?.reservation_time}
                     onChange={(val) => onChange("reservation_time", val)}
+                    required={true}
                 />
             </fieldset>
         </>
